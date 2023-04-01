@@ -3,4 +3,7 @@
     <string name="txt_menu">Menu</string>
     <string name="btn_info">Infos</string>
     <string name="btn_produits">Produits</string>
+
+    //Products
+    <string name="titre_categories">Catégories</string>
 </resources>
