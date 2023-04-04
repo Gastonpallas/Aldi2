@@ -19,7 +19,6 @@ open class BaseActivity : AppCompatActivity() {
         textViewTitle.setText(title)
     }
 
-
     fun showBack(){
         val imageViewBack=findViewById<ImageView>(R.id.imageViewBack)
         imageViewBack.visibility= View.VISIBLE
