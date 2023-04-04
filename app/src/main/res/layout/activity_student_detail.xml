@@ -28,47 +28,29 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:gravity="center_horizontal" />
+            android:gravity="center_horizontal"
+            android:paddingTop="16dp" />
 
         <TextView
             android:id="@+id/firstNameView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textSize="20sp"
-            android:paddingTop="16dp" />
+            style="@style/detailsStyle" />
 
         <TextView
             android:id="@+id/lastNameView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textSize="20sp"
-            android:paddingTop="16dp" />
+            style="@style/detailsStyle" />
 
         <TextView
             android:id="@+id/emailView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textSize="15sp"
-            android:paddingTop="16dp" />
+            style="@style/detailsStyle" />
 
         <TextView
             android:id="@+id/groupView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textSize="20sp"
-            android:paddingTop="16dp" />
+            style="@style/detailsStyle" />
 
         <TextView
             android:id="@+id/urlView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textSize="20sp"
-            android:paddingTop="16dp" />
+            style="@style/detailsStyle" />
+
     </LinearLayout>
 
 </LinearLayout>
