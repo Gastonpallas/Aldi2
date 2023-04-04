@@ -1,0 +1,7 @@
+<Button
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/student_button"
+    android:layout_width="250dp"
+    android:layout_height="75dp"
+    android:layout_gravity="center_horizontal"
+    android:padding="10dp" />

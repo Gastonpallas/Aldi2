@@ -1,12 +1,14 @@
 package fr.epsi.aldi2
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 
-class SplashActivity : AppCompatActivity() {
+@SuppressLint("CustomSplashScreen")
+class SplashActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +18,6 @@ class SplashActivity : AppCompatActivity() {
             val newIntent = Intent(application, MainActivity::class.java)
             startActivity(newIntent)
             finish()
-        }, 1000)
+        }, 2000)
     }
 }
