@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import fr.epsi.aldi2.json.Categories
+import fr.epsi.aldi2.json.Category
 import fr.epsi.aldi2.json.adapter.CategoriesAdapter
 import okhttp3.*
 import org.json.JSONObject
@@ -12,6 +12,8 @@ import java.io.IOException
 
 class CategoriesActivity : BaseActivity() {
 
+    var categories: ArrayList<Category> = arrayListOf<Category>()
+    var categoriesAdapter: CategoriesAdapter = CategoriesAdapter(categories);
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,16 +21,16 @@ class CategoriesActivity : BaseActivity() {
         setHeaderTitle(getString(R.string.titre_categories))
         showBack()
 
-        val categories = arrayListOf<Categories>()
+        val recyclerViewCategories = findViewById<RecyclerView>(R.id.recyclerViewCategories)
+        recyclerViewCategories.layoutManager = LinearLayoutManager(this)
 
+        recyclerViewCategories.adapter = this.categoriesAdapter
 
-        val recyclerViewStudents = findViewById<RecyclerView>(R.id.recyclerViewCategories)
-        recyclerViewStudents.layoutManager = LinearLayoutManager(this)
+        getCategories()
 
-        val categoriesAdapter = CategoriesAdapter(categories)
-        recyclerViewStudents.adapter = categoriesAdapter
+    }
 
-
+    private fun getCategories(){
         val okHttpClient: OkHttpClient = OkHttpClient.Builder().build()
         val mRequestURL = "https://www.ugarit.online/epsi/categories.json"
         val request = Request.Builder()
@@ -46,13 +48,14 @@ class CategoriesActivity : BaseActivity() {
                 val data = response.body?.string()
                 Log.e("Aldi2", "################# response.code:" + response.code)
                 if (data != null && response.code == 200) {
-                    Log.e("Aldi2", data)
+//                    Log.e("Aldi2", data)
                     val jsCategories = JSONObject(data)
                     val jsArrayCategories = jsCategories.getJSONArray("items")
                     for (i in 0 until jsArrayCategories.length()) {
                         val js = jsArrayCategories.getJSONObject(i)
-                        val categorie = Categories(
-                            js.optString("title", "Not Found")
+                        val categorie = Category(
+                            js.optString("title", "Not Found"),
+                            js.optString("products_url", "Not Found")
                         )
                         categories.add(categorie)
                         runOnUiThread(Runnable {
@@ -62,7 +65,6 @@ class CategoriesActivity : BaseActivity() {
                 }
             }
         })
-
     }
 
 }
