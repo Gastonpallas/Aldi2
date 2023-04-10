@@ -49,7 +49,6 @@ class ProductsActivity() : BaseActivity() {
 
             override fun onResponse(call: Call, response: Response) {
                 val data = response.body?.string()
-                Log.e("Aldi2", "################# response.code:" + response.code)
                 if (data != null && response.code == 200) {
                     Log.e("Aldi2", data)
                     val jsCategories = JSONObject(data)

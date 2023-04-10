@@ -48,7 +48,6 @@ class CategoriesActivity : BaseActivity() {
                 val data = response.body?.string()
                 Log.e("Aldi2", "################# response.code:" + response.code)
                 if (data != null && response.code == 200) {
-//                    Log.e("Aldi2", data)
                     val jsCategories = JSONObject(data)
                     val jsArrayCategories = jsCategories.getJSONArray("items")
                     for (i in 0 until jsArrayCategories.length()) {
