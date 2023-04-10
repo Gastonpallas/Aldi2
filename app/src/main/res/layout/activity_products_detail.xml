@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ProductsDetailActivity">
+
+    <include
+        layout="@layout/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageViewProductDetail"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:maxHeight="300dp"
+            tools:minHeight="300dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewProductDetailDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Description :"
+                android:textSize="14sp" />
+
+        </ScrollView>
+
+
+    </LinearLayout>
+</LinearLayout>

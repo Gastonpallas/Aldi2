@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <ImageView
+            android:id="@+id/avatar_image_view"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            android:paddingTop="16dp" />
+
+        <TextView
+            android:id="@+id/firstNameView"
+            style="@style/detailsStyle" />
+
+        <TextView
+            android:id="@+id/lastNameView"
+            style="@style/detailsStyle" />
+
+        <TextView
+            android:id="@+id/emailView"
+            style="@style/detailsStyle" />
+
+        <TextView
+            android:id="@+id/groupView"
+            style="@style/detailsStyle" />
+
+        <TextView
+            android:id="@+id/urlView"
+            style="@style/detailsStyle" />
+
+    </LinearLayout>
+
+</LinearLayout>
