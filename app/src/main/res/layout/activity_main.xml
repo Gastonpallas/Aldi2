@@ -30,7 +30,6 @@
                 style="@style/BoutonMenu"
                 android:text="@string/btn_produits" />
 
-
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
